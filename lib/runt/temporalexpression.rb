@@ -598,12 +598,11 @@ class REDay
   def to_s
     "from #{Runt.format_time(@range.begin)} to #{Runt.format_time(@range.end)} daily"
   end
-  
+
+  private
   def spans_midnight?(start_hour, end_hour)
     return end_hour < start_hour
   end
-  
-  private
 
   def get_current(hour,minute)
       PDate.min(ANY_DATE.year,ANY_DATE.month,CURRENT,hour,minute)
