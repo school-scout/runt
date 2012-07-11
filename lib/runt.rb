@@ -164,7 +164,7 @@ class Date
 
   include Runt
 
-  attr_accessible :date_precision
+  attr_accessor :date_precision
   alias_method :precision, :date_precision
   def include?(expr)
     eql?(expr)
@@ -185,7 +185,7 @@ class Time
   
   include Runt
 
-  attr_accessible :date_precision
+  attr_accessor :date_precision
   alias_method :old_initialize, :initialize
   alias_method :precision, :date_precision
 
