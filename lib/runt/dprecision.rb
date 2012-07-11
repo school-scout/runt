@@ -118,15 +118,11 @@ module Runt
       end
 
       def <=>(other)
-        if other
-          self.precision <=> other.precision
-        end
+        self.precision <=> other.precision
       end
 
       def ===(other)
-        if other
-          self.precision <=> other.precision
-        end
+        self.precision == other.precision
       end
 
       def to_s

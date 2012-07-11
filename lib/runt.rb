@@ -164,8 +164,8 @@ class Date
 
   include Runt
 
-  attr_accessor :date_precision
-
+  attr_accessible :date_precision
+  alias_method :precision, :date_precision
   def include?(expr)
     eql?(expr)
   end
@@ -185,8 +185,10 @@ class Time
   
   include Runt
 
-  attr_accessor :date_precision
+  attr_accessible :date_precision
   alias_method :old_initialize, :initialize
+  alias_method :precision, :date_precision
+
   def initialize(*args)
     if(args[0].instance_of?(Runt::DPrecision::Precision))
       @precision=args.shift
