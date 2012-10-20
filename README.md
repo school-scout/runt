@@ -30,7 +30,7 @@ TODO: Write usage instructions here
 
 ### Current Build Status
 
-[![Build Status](https://travis-ci.org/craigw/runt.png)](https://travis-ci.org/craigw/runt.png)
+[![Build Status](https://secure.travis-ci.org/craigw/runt.png)](http://travis-ci.org/craigw/runt)
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
