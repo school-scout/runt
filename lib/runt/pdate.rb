@@ -51,7 +51,7 @@ module Runt
 	current_date = self.class.to_date(self)
 	return DPrecision::to_p((current_date>>n),@date_precision)
       when WEEK then
-	return new_self_plus(n*7)	
+	return new_self_plus(n*7)
       when DAY then
 	return new_self_plus(n)
       when HOUR then
@@ -90,7 +90,7 @@ module Runt
     if(block_given?)
       n=yield(n)
     end
-    return DPrecision::to_p(self.class.new!(@ajd + n, @of, @sg),@date_precision)
+    return DPrecision::to_p(Time.at(to_time.to_i + (n.to_f * 86400)),date_precision)
   end
 
   def PDate.to_date(pdate)
