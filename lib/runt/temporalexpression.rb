@@ -588,11 +588,17 @@ class REDay
     return true if @less_precise_match && date.date_precision <= DPrecision::DAY
     if(@spans_midnight&&date.hour<12) then
       #Assume next day
-      return @range.include?(get_next(date.hour,date.min))
+      n = get_next(date.hour,date.min)
+      return false unless @range.begin <= n
+      return false unless @range.end >= n
+      true
     end
 
     #Same day
-    return @range.include?(get_current(date.hour,date.min))
+    c = get_current(date.hour,date.min)
+    return false unless @range.begin <= c
+    return false unless @range.end >= c
+    true
   end
 
   def to_s
