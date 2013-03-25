@@ -196,7 +196,7 @@ class Time
     old_initialize(*args)
   end
   
-  if RUBY_VERSION.to_f >= 2
+  if RUBY_VERSION.to_f < 2
     alias :old_to_yaml :to_yaml
     def to_yaml(options)
       if self.instance_variables.empty?
